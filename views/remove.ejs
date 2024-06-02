@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-800">
+    <a class="text-blue-500 inline-block mb-10" href="/">Go Back To Home</a>
+    <p class="text-white p-2 m-2 bg-red-500 rounded min-w ">This will delete your file permanently, are you sure you want to continue ?</p>
+    <form action="/remove" method="post">
+        <input type="hidden" name="filename" value="<%=filename%>">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded ml-2 mt-3">Continue</button>
+    </form>
+</body>
+</html>

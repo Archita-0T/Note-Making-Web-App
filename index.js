@@ -9,9 +9,12 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get('/',function(req,res){
     fs.readdir(`./files`,function(err,files){
         res.render("index",{files:files}); 
+        
     })
     
 })
+
+
 
 app.get('/file/:filename',function(req,res){
     fs.readFile(`./files/${req.params.filename}`,"utf-8",function(err,filedata){
@@ -28,6 +31,17 @@ app.get('/file/:filename',function(req,res){
             res.redirect("/");
            })
                })
+
+               app.get('/remove/:filename',function(req,res){
+                res.render("remove",{filename:req.params.filename});
+                   })
+
+                   app.post('/remove',function(req,res){
+                    fs.unlink(`./files/${req.body.filename}`,function(err){
+                        res.redirect("/");
+                    })
+
+                   })
         
     
 

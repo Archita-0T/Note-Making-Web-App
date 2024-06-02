@@ -21,9 +21,13 @@
                 <% files.forEach(function(val){ %>
                     <div class="task min-w-72 px-3 py-4 bg-zinc-800 rounded-md ">
                         <h1 class="text-white text-3xl tracking-tighter "><%= val%></h1>
-                        <div class="flex w-full justify-between items-center mt-3">
+                        <div class="flex w-full justify-between mt-3">
                             <a class="text-blue-500 inline-block " href="/file/<%=val%>">Read More</a>
-                            <a class="text-zinc-600" href="/edit/<%=val%>">Edit Filename</a>
+                            <div class="flex flex-col">
+                                <a class="text-zinc-600" href="/edit/<%=val%>">Edit Filename</a>
+                                <a class="text-zinc-600" href="/remove/<%=val%>">Remove File</a>
+                            </div>
+                            
 
                         </div>
                        
